@@ -7,8 +7,8 @@
     "license": "MIT",
     "authors": [
         {
-            "name": "your name",
-            "email": "your email"
+            "name": "Nick Yuan",
+            "email": "lon.y@qq.com"
         }
     ],
     "require": {
@@ -26,7 +26,7 @@
     "extra": {
         "laravel": {
             "providers": [
-                "Touge\\AdminCommon\\AdminCommonServiceProvider"
+                "Touge\\AdminCommon\\Providers\\ModuleServiceProvider"
             ]
 
         }
