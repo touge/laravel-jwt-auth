@@ -1,9 +1,9 @@
 {
-    "name": "touge/admin-common",
+    "name": "touge/laravel-admin-common",
     "description": "description...",
     "type": "library",
     "keywords": ["laravel-admin", "extension"],
-    "homepage": "https://github.com/touge/admin-common",
+    "homepage": "https://github.com/touge/laravel-admin-common",
     "license": "MIT",
     "authors": [
         {
