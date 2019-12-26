@@ -49,7 +49,6 @@ class AuthController extends Controller
         $token = $this->guard()->attempt($credentials);
 
         $login_user= $this->guard()->user();
-
         if( $login_user->expire_time && strtotime($login_user->expire_time) < time() )
         {
             $this->failed(__('touge-common::auth.login-expire'));
@@ -65,18 +64,16 @@ class AuthController extends Controller
      */
     public function me()
     {
-        $member = $this->guard()->user();
+        return $this->success($this->guard()->user());
+    }
 
-        return $this->success($member);
-
-        $result['member'] = $member->toArray();
-        $result['school']= $member->customer->school;
-
-        $result['professions'] = $member->customer
-            ->professions()->where(['locked'=>0])
-            ->get(['id','name','slug','icon']);
-
-        return $this->success($result);
+    /**
+     * 用户退出
+     * @return \Illuminate\Http\JsonResponse
+     */
+    public function logout(){
+        $this->guard()->logout();
+        return $this->success([]);
     }
 
     /**
@@ -90,7 +87,7 @@ class AuthController extends Controller
         return [
             'access_token' => $token,
             'token_type' => 'bearer',
-            'expires_in' => auth($this->guard_name())->factory()->getTTL() * 60
+            'expires_in' => auth($this->guard_name)->factory()->getTTL() * 60
         ];
     }
 

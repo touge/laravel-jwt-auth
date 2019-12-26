@@ -22,6 +22,7 @@ class JwtExceptionHandle
         'An error occurred'=> '发生系统错误',
         'Wrong number of segments'=> '令牌解析错误',
         'Token Signature could not be verified.'=> '无法验证令牌签名',
+        'The token has been blacklisted'=> '令牌已被列入黑名单',
     ];
 
     public function __construct(\Exception $exception)

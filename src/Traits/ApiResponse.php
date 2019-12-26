@@ -23,8 +23,11 @@ trait ApiResponse
         $output = [
             'status'=>$status
         ];
+
         if($status=='successful'){
-            $output['data'] = $data;
+            if(is_array($data)){
+                $output['data'] = $data;
+            }
         }else{
             $output['message'] = $data;
         }
