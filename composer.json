@@ -13,6 +13,7 @@
     ],
     "require": {
         "php": ">=7.0.0",
+        "tymon/jwt-auth": "1.*@rc",
         "encore/laravel-admin": "~1.6"
     },
     "require-dev": {
