@@ -6,7 +6,7 @@
  * Time: 18:12
  */
 
-namespace Touge\AdminCommon;
+namespace Touge\JwtAuth;
 
 
 use Illuminate\Database\Eloquent\Model;

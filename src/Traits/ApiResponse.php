@@ -6,15 +6,15 @@
  * Time: 16:22
  */
 
-namespace Touge\AdminCommon\Traits;
+namespace Touge\JwtAuth\Traits;
 
 
-use Touge\AdminCommon\Exceptions\ResponseFailedException;
+use Touge\JwtAuth\Exceptions\ResponseFailedException;
 
 trait ApiResponse
 {
     /**
-     * @param array|string $data
+     * @param $data
      * @param string $status
      * @param int $httpCode
      * @return \Illuminate\Http\JsonResponse
@@ -25,13 +25,10 @@ trait ApiResponse
         ];
 
         if($status=='successful'){
-            if(is_array($data)){
-                $output['data'] = $data;
-            }
+            $output['data'] = $data;
         }else{
             $output['message'] = $data;
         }
-
         return response()->json($output,$httpCode)
             ->setEncodingOptions(JSON_UNESCAPED_UNICODE);
     }

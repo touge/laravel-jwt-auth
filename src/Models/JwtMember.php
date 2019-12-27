@@ -5,7 +5,7 @@
  * Date: 2019-12-19
  * Time: 11:06
  */
-namespace Touge\AdminCommon\Models;
+namespace Touge\JwtAuth\Models;
 
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Support\Facades\Log;
@@ -19,8 +19,8 @@ class JwtMember extends Authenticatable implements JWTSubject
 
     public function __construct(array $attributes = [])
     {
-        $this->setTable(config('laravel-admin-common.database.auth_table'));
-        Log::info(config('laravel-admin-common.database.user_table'));
+        $this->setTable(config('laravel-jwt-auth.database.auth_table'));
+        Log::info(config('laravel-jwt-auth.database.auth_table'));
         parent::__construct($attributes);
     }
 

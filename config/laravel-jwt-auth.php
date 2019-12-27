@@ -19,7 +19,7 @@ return [
         'providers' => [
             'jwt-member'=>[
                 'driver' => 'eloquent',
-                'model'=>\Touge\AdminCommon\Models\JwtMember::class
+                'model'=>\Touge\JwtAuth\Models\JwtMember::class
             ],
         ],
     ],

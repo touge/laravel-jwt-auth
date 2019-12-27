@@ -6,11 +6,11 @@
  * Time: 15:44
  */
 
-namespace Touge\AdminCommon\Controllers\Api;
+namespace Touge\JwtAuth\Controllers\Api;
 
 
 use App\Http\Controllers\Controller;
-use Touge\AdminCommon\Traits\ApiResponse;
+use Touge\JwtAuth\Traits\ApiResponse;
 
 class TestController extends Controller
 {

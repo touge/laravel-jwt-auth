@@ -1,6 +1,6 @@
 <?php
 
-namespace Touge\AdminCommon\Models;
+namespace Touge\JwtAuth\Models;
 
 use Tymon\JWTAuth\Contracts\JWTSubject;
 use Illuminate\Notifications\Notifiable;

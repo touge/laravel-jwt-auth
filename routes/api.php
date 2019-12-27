@@ -9,7 +9,11 @@
 use Illuminate\Support\Facades\Route;
 use Illuminate\Routing\Router;
 
-Route::group(['prefix'=>'auth', 'as'=> 'auth.'],function (Router $router){
+Route::group([
+    'prefix'=>'auth',
+    'namespace'=> 'Api',
+    'as'=> 'auth.'
+],function (Router $router){
     $router->post('login', 'AuthController@login')
         ->name('login');
     $router->post('logout', 'AuthController@logout')
@@ -21,6 +25,6 @@ Route::group(['prefix'=>'auth', 'as'=> 'auth.'],function (Router $router){
 });
 
 
-Route::group(['middleware'=>'jwt.auth:api', 'prefix'=>'test', 'as'=> 'test.'], function(Router $router){
-   $router->get('', 'TestController@index')->name('index');
-});
+//Route::group(['middleware'=>'jwt.auth:api', 'prefix'=>'test', 'as'=> 'test.'], function(Router $router){
+//   $router->get('', 'TestController@index')->name('index');
+//});

@@ -6,7 +6,7 @@
  * Time: 14:35
  */
 
-namespace Touge\AdminCommon\Exceptions;
+namespace Touge\JwtAuth\Exceptions;
 
 
 use Exception;

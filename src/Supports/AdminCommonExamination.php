@@ -1,6 +1,6 @@
 <?php
 
-namespace Touge\AdminCommon\Supports;
+namespace Touge\JwtAuth\Supports;
 
 use Encore\Admin\Extension;
 
@@ -13,7 +13,7 @@ class AdminCommonExamination extends Extension
     public $assets = __DIR__ . '/../../resources/assets';
 
     public $menu = [
-        'title' => 'AdminCommon',
+        'title' => 'JwtAuth',
         'path'  => 'laravel-admin-common',
         'icon'  => 'fa-gears',
     ];

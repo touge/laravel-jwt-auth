@@ -5,15 +5,13 @@
  * Date: 2019-12-19
  * Time: 09:13
  */
-namespace Touge\AdminCommon\Controllers\Api;
+namespace Touge\JwtAuth\Controllers\Api;
 
 
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
-use Illuminate\Support\Facades\Log;
-use Illuminate\Support\Facades\Validator;
-use Touge\AdminCommon\Traits\ApiResponse;
+use Touge\JwtAuth\Traits\ApiResponse;
 
 class AuthController extends Controller
 {
@@ -32,26 +30,20 @@ class AuthController extends Controller
         $this->middleware('jwt.auth', ['except' => ['login']]);
     }
 
-    /**
-     *
-     * @param Request $request
-     * @return \Illuminate\Http\JsonResponse|void
-     * @throws \Touge\AdminCommon\Exceptions\ResponseFailedException
-     */
+
     public function login(Request $request)
     {
         $credentials = $request->only([$this->username(), 'password']);
-
-        if (! $token = $this->guard()->attempt($credentials)) {
-            return $this->failed(__('touge-common::auth.login-failed'));
+        if (! $token = $this->guard()->attempt($credentials))
+        {
+            return $this->failed(__('JwtAuth::jwt-auth.login-failed'));
         }
 
         $token = $this->guard()->attempt($credentials);
-
         $login_user= $this->guard()->user();
         if( $login_user->expire_time && strtotime($login_user->expire_time) < time() )
         {
-            $this->failed(__('touge-common::auth.login-expire'));
+            $this->failed(__('JwtAuth::jwt-auth.login-expire'));
         }
 
         return $this->success($this->respondWithToken($token));

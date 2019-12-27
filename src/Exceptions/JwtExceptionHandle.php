@@ -6,7 +6,7 @@
  * Time: 11:00
  */
 
-namespace Touge\AdminCommon\Exceptions;
+namespace Touge\JwtAuth\Exceptions;
 
 
 use Symfony\Component\HttpKernel\Exception\UnauthorizedHttpException;
