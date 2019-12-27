@@ -3,7 +3,7 @@
     "description": "description...",
     "type": "library",
     "keywords": ["laravel-admin", "extension"],
-    "homepage": "https://github.com/touge/laravel-admin-common",
+    "homepage": "https://github.com/touge/laravel-jwt-auth",
     "license": "MIT",
     "authors": [
         {
