@@ -31,6 +31,11 @@ class AuthController extends Controller
     }
 
 
+    /**
+     * @param Request $request
+     * @return \Illuminate\Http\JsonResponse|void
+     * @throws \Touge\JwtAuth\Exceptions\ResponseFailedException
+     */
     public function login(Request $request)
     {
         $credentials = $request->only([$this->username(), 'password']);
@@ -50,8 +55,6 @@ class AuthController extends Controller
     }
 
     /**
-     * Get the authenticated User.
-     *
      * @return \Illuminate\Http\JsonResponse
      */
     public function me()

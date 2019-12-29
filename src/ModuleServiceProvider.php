@@ -29,11 +29,13 @@ class ModuleServiceProvider extends ServiceProvider
         if( !file_exists(config_path($this->config_file))){
             $this->loadConfig();
         }
+        config(Arr::dot(config('laravel-jwt-auth.auth', []), 'auth.'));
+
         $this->loadTranslationsFrom(__DIR__.'/../resource/lang', 'JwtAuth');
         $this->mapApiRoutes();
 
         /**
-         * 发布配置及语言包
+         * 发布资源内容
          */
         if ($this->app->runningInConsole()) {
             $this->publishes([__DIR__.'/../config' => config_path()], 'touge-laravel-jwt-auth-config');
@@ -69,6 +71,5 @@ class ModuleServiceProvider extends ServiceProvider
         $key = substr($this->config_file, 0, -4);
         $full_path= __DIR__ . '/../config/' . $this->config_file;
         $this->app['config']->set($key, array_merge_recursive(config($key, []), require $full_path));
-        config(Arr::dot(config('laravel-jwt-auth.auth', []), 'auth.'));
     }
 }
