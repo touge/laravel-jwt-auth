@@ -13,7 +13,8 @@
     ],
     "require": {
         "php": ">=7.0.0",
-        "tymon/jwt-auth": "1.0.0-rc.5"
+        "tymon/jwt-auth": "1.0.0-rc.5",
+        "fruitcake/laravel-cors": "^1.0"
     },
     "require-dev": {
         "phpunit/phpunit": "~6.0"

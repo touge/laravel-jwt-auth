@@ -21,6 +21,7 @@ class JwtMember extends Authenticatable implements JWTSubject
     {
         $this->setTable(config('laravel-jwt-auth.database.auth_table'));
         Log::info(config('laravel-jwt-auth.database.auth_table'));
+
         parent::__construct($attributes);
     }
 

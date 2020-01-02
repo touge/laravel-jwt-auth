@@ -13,3 +13,6 @@ new \Touge\JwtAuth\Exceptions\JwtExceptionHandle($exception);
     }
 ```
 此目的捕获jwt的错误
+
+
+依赖```fruitcake/laravel-cors```，安装说明见：https://www.jianshu.com/p/f8ba64aaca8d
