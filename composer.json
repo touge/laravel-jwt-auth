@@ -13,7 +13,7 @@
     ],
     "require": {
         "php": ">=7.0.0",
-        "tymon/jwt-auth": "1.*@rc"
+        "tymon/jwt-auth": "1.0.0-rc.5"
     },
     "require-dev": {
         "phpunit/phpunit": "~6.0"
