@@ -24,6 +24,6 @@ return [
         ],
     ],
     'database'=> [
-        'auth_table'=> 'customer_school_members',
+        'auth_table'=> 'school_customer_members',
     ]
 ];
