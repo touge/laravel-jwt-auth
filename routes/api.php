@@ -18,13 +18,8 @@ Route::group([
         ->name('login');
     $router->post('logout', 'AuthController@logout')
         ->name("logout");
-    $router->post('refresh', 'AuthController@refresh')
-        ->name("refresh");
+//    $router->post('refresh', 'AuthController@refresh')
+//        ->name("refresh");
     $router->get('me', 'AuthController@me')
         ->name("me");
 });
-
-
-//Route::group(['middleware'=>'jwt.auth:api', 'prefix'=>'test', 'as'=> 'test.'], function(Router $router){
-//   $router->get('', 'TestController@index')->name('index');
-//});
